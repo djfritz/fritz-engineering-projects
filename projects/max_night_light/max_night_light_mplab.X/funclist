@@ -1,0 +1,10 @@
+___awmod: CODE, 1091 0 72
+_main: CODE, 1283 0 765
+_Latch: CODE, 933 0 15
+___lmul: CODE, 977 0 47
+__initialization: CODE, 918 0 2
+_srand: CODE, 923 0 10
+_WritePacket: CODE, 1163 0 120
+_rand: CODE, 1024 0 67
+___wmul: CODE, 948 0 29
+Total: 1127
