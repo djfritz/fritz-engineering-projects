@@ -35,10 +35,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "7783 /opt/microchip/xc8/v1.20/include/pic16f1829.h
 [v _TRMT `Vb ~T0 @X0 0 e@3313 ]
-"3234
-[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
 "7513
 [v _RB6 `Vb ~T0 @X0 0 e@110 ]
+"3234
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
 [; ;pic16f1829.h: 44: extern volatile unsigned char INDF0 @ 0x000;
 "46 /opt/microchip/xc8/v1.20/include/pic16f1829.h
 [; ;pic16f1829.h: 46: asm("INDF0 equ 00h");
@@ -3091,9 +3091,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [e :U 375 ]
 {
-[; ;max_bell_xmit.c: 63: _delay((unsigned long)((500)*(500000/4000.0)));
+[; ;max_bell_xmit.c: 63: _delay((unsigned long)((2000)*(500000/4000.0)));
 "63
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;max_bell_xmit.c: 64: while (!TRMT);
 "64
 [e $U 377  ]
@@ -3101,21 +3101,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 377 ]
 [e $ ! _TRMT 378  ]
 [e :U 379 ]
-[; ;max_bell_xmit.c: 65: TXREG = RB6;
+[; ;max_bell_xmit.c: 65: if (RB6) {
 "65
-[e = _TXREG -> -> _RB6 `i `uc ]
+[e $ ! _RB6 380  ]
+{
+[; ;max_bell_xmit.c: 66: TXREG = 1;
 "66
+[e = _TXREG -> -> 1 `i `uc ]
+"67
+}
+[; ;max_bell_xmit.c: 67: } else {
+[e $U 381  ]
+[e :U 380 ]
+{
+[; ;max_bell_xmit.c: 68: TXREG = 2;
+"68
+[e = _TXREG -> -> 2 `i `uc ]
+"69
+}
+[e :U 381 ]
+"70
 }
 [e :U 374 ]
 "62
 [e $U 375  ]
 [e :U 376 ]
-[; ;max_bell_xmit.c: 66: }
-[; ;max_bell_xmit.c: 67: return (0);
-"67
+[; ;max_bell_xmit.c: 69: }
+[; ;max_bell_xmit.c: 70: }
+[; ;max_bell_xmit.c: 71: return (0);
+"71
 [e ) -> 0 `i ]
 [e $UE 373  ]
-[; ;max_bell_xmit.c: 68: }
-"68
+[; ;max_bell_xmit.c: 72: }
+"72
 [e :UE 373 ]
 }

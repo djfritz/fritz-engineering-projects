@@ -4045,17 +4045,39 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 44 "max_bell.c"
+# 45 "max_bell.c"
+int last = 0;
+int buzzer_count = 0;
+
 void interrupt intr(void) {
 if (RCIF) {
 
 char data = RCREG;
-if (data == 1) {
+if (data == 1 && last == 0) {
 RC1 = 1;
-} else if (data == 0) {
+RB4 = 0;
+TMR0 = 100;
+TMR0IE = 1;
+last = 1;
+} else if (data == 2) {
 RC1 = 0;
+last = 0;
 }
-RC0 = !RC0;
+
+# 66
+RC0 = 1;
+_delay((unsigned long)((10)*(500000/4000.0)));
+RC0 = 0;
+} else if (TMR0IF) {
+RB4 = !RB4;
+TMR0IF = 0;
+if (buzzer_count == 20) {
+TMR0IE = 0;
+buzzer_count = 0;
+} else {
+buzzer_count++;
+TMR0 = 100;
+}
 }
 }
 
@@ -4077,12 +4099,19 @@ BRGH = 1;
 SPBRGH = 0;
 SPBRGL = 12;
 
+TMR0CS = 0;
+PSA = 0;
+PS0 = 1;
+PS1 = 1;
+PS2 = 0;
+
 GIE = 1;
 RCIE = 1;
 PEIE = 1;
 
 RC0 = 0;
 RC1 = 0;
+RB4 = 1;
 
 while (1);
 return (0);

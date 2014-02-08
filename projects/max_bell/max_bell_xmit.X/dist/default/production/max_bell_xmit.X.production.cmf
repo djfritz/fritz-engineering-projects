@@ -11,14 +11,14 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgt5GM4Zx.obj
+$/tmp/cgtHA3q47.obj
 end_init CODE 0 2 2 2 2
 reset_vec CODE 0 0 0 2 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production/max_bell_xmit.X.production.obj
-cstackCOMMON COMMON 1 70 70 6 1
-cinit CODE 0 7D3 7D3 3 2
-maintext CODE 0 7D6 7D6 2A 2
+cstackCOMMON COMMON 1 70 70 7 1
+cinit CODE 0 7CD 7CD 3 2
+maintext CODE 0 7D0 7D0 30 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -39,13 +39,13 @@ BANK7 003A0-003EF 1
 BANK8 00420-0046F 1
 BANK9 004A0-004EF 1
 BIGRAM 02000-023EF 1
-CODE 00004-007D2 2
+CODE 00004-007CC 2
 CODE 00800-01FFF 2
-COMMON 00076-0007D 1
-CONST 00004-007D2 2
+COMMON 00077-0007D 1
+CONST 00004-007CC 2
 CONST 00800-01FFF 2
 EEDATA 0F000-0F0FF 2
-ENTRY 00004-007D2 2
+ENTRY 00004-007CC 2
 ENTRY 00800-01FFF 2
 IDLOC 08000-08003 2
 RAM 00020-0006F 1
@@ -93,9 +93,9 @@ SFR6 00300-0031F 1
 SFR7 00380-0039F 1
 SFR8 00400-0041F 1
 SFR9 00480-0049F 1
-STRCODE 00004-007D2 2
+STRCODE 00004-007CC 2
 STRCODE 00800-01FFF 2
-STRING 00004-007D2 2
+STRING 00004-007CC 2
 STRING 00800-01FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -111,28 +111,30 @@ STRING 00800-01FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/max_bell_xmit.X.production.obj
-"/tmp/cgtkOEi8r":453 7D3 cinit CODE
-"/tmp/cgtkOEi8r":454 7D4 cinit CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":45 7D6 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":46 7D8 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":47 7D9 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":48 7DA maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":49 7DD maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":50 7DF maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":52 7E1 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":53 7E3 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":54 7E4 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":55 7E6 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":56 7E7 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":57 7E8 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":58 7E9 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":59 7EA maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":60 7EB maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":63 7ED maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":64 7F6 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":65 7F9 maintext CODE
+"/tmp/cgtHwRuFo":453 7CD cinit CODE
+"/tmp/cgtHwRuFo":454 7CE cinit CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":45 7D0 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":46 7D2 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":47 7D3 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":48 7D4 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":49 7D7 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":50 7D9 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":52 7DB maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":53 7DD maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":54 7DE maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":55 7E0 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":56 7E1 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":57 7E2 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":58 7E3 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":59 7E4 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":60 7E5 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":63 7E7 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":64 7F4 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":65 7F7 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":66 7FA maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":68 7FC maintext CODE
 "/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":62 7FF maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":68 800 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell_xmit.X/max_bell_xmit.c":72 800 maintext CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -148,7 +150,7 @@ $dist/default/production/max_bell_xmit.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _RB6 6E 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 76 0 ABS 0 - -
+__S1 77 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hintentry 4 0 CODE 0 intentry -
 __Lintentry 4 0 CODE 0 intentry -
@@ -157,15 +159,15 @@ _SYNC CF4 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _SPEN CEF 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TXEN CF5 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TRMT CF1 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-_main FAC 0 CODE 0 maintext dist/default/production/max_bell_xmit.X.production.obj
+_main FA0 0 CODE 0 maintext dist/default/production/max_bell_xmit.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-start 4 0 CODE 0 init /tmp/cgt5GM4Zx.obj
+start 4 0 CODE 0 init /tmp/cgtHA3q47.obj
 _BRG16 CFB 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TRISB 8D 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TRISC 8E 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/cgt5GM4Zx.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/cgtHA3q47.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 __Hconfig 10012 0 CONFIG 0 config -
 __Lconfig 1000E 0 CONFIG 0 config -
@@ -215,7 +217,7 @@ __Linit 4 0 CODE 0 init -
 __end_of_main 1000 0 CODE 0 maintext dist/default/production/max_bell_xmit.X.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-end_of_initialization FA6 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
+end_of_initialization F9A 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Hsfr20 0 0 ABS 0 sfr20 -
@@ -272,7 +274,7 @@ __Hbank2 0 0 ABS 0 bank2 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Lbank3 0 0 ABS 0 bank3 -
-___latbits 2 0 ABS 0 - /tmp/cgt5GM4Zx.obj
+___latbits 2 0 ABS 0 - /tmp/cgtHA3q47.obj
 __Hbank4 0 0 ABS 0 bank4 -
 __Lbank4 0 0 ABS 0 bank4 -
 __Hbank5 0 0 ABS 0 bank5 -
@@ -289,7 +291,7 @@ __Hbank9 0 0 ABS 0 bank9 -
 __Lbank9 0 0 ABS 0 bank9 -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
-__end_of__initialization FA6 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
+__end_of__initialization F9A 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Hcinit 0 0 ABS 0 cinit -
@@ -348,25 +350,25 @@ __Hend_init 8 0 CODE 0 end_init -
 __Lend_init 4 0 CODE 0 end_init -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
+intlevel0 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-intlevel1 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
-intlevel2 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
-intlevel3 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
-intlevel4 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
-intlevel5 0 0 CODE 0 functab /tmp/cgt5GM4Zx.obj
+intlevel1 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
+intlevel2 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
+intlevel3 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
+intlevel4 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
+intlevel5 0 0 CODE 0 functab /tmp/cgtHA3q47.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/max_bell_xmit.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-start_initialization FA6 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
+start_initialization F9A 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-__pmaintext FAC 0 CODE 0 maintext dist/default/production/max_bell_xmit.X.production.obj
+__pmaintext FA0 0 CODE 0 maintext dist/default/production/max_bell_xmit.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
-__initialization FA6 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
+__initialization F9A 0 CODE 0 cinit dist/default/production/max_bell_xmit.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 # %DABS Section
@@ -388,6 +390,6 @@ __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/max_bell_xmit.X.production.obj
 %SEGMENTS
 reset_vec 0 0 0 4 2 CODE
 config 0 8007 1000E 2 2 CONFIG
-cstackCOMMON 1 70 70 6 1 COMMON
-maintext 0 7D6 FAC 2A 2 CODE
-cinit 0 7D3 FA6 3 2 CODE
+cstackCOMMON 1 70 70 7 1 COMMON
+maintext 0 7D0 FA0 30 2 CODE
+cinit 0 7CD F9A 3 2 CODE

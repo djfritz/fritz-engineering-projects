@@ -39,7 +39,7 @@
 #define LED_HB RC0
 #define LED_DOOR RC1
 
-#define TICK 500
+#define TICK 2000
 
 int main(int argc, char** argv) {
     ANSELA=0;
@@ -62,7 +62,11 @@ int main(int argc, char** argv) {
     while (1) {
         __delay_ms(TICK);
         while (!TRMT);
-        TXREG = DOOR;
+        if (DOOR) {
+            TXREG = 1;
+        } else {
+            TXREG = 2;
+        }
     }
     return (EXIT_SUCCESS);
 }

@@ -34,23 +34,48 @@
 #include <stdlib.h>
 
 #define _XTAL_FREQ 500000 /* 500kHz default intosc */
-#define BUZZER RB4
+#define BUZZER RB4 /* buzzer is active low */
 #define DOOR RB6
 #define LED_HB RC0
 #define LED_DOOR RC1
 
 #define TICK 500
+#define BUZZER_COUNT_MAX 20
+
+int last = 0;
+int buzzer_count = 0;
 
 void interrupt intr(void) {
     if (RCIF) {
         // receive uart interrupt
         char data = RCREG;
-        if (data == 1) {
+        if (data == 1 && last == 0) {
             LED_DOOR = 1;
-        } else if (data == 0) {
+            BUZZER = 0;
+            TMR0 = 100;
+            TMR0IE = 1;
+            last = 1;
+        } else if (data == 2) {
             LED_DOOR = 0;
+            last = 0;
         }
-        LED_HB = !LED_HB;
+        /* normally i'd start a timer interrupt, but we know that the sending
+         * side won't be sending another heartbeat for some time, so instead
+         * i'll just make this a bit of a hack and actually sleep the amount
+         * of time I need for the heartbeat indicator. */
+        LED_HB = 1;
+        __delay_ms(10);
+        LED_HB = 0;
+    } else if (TMR0IF) {
+        BUZZER = !BUZZER;
+        TMR0IF = 0;
+        if (buzzer_count == BUZZER_COUNT_MAX) {
+            TMR0IE = 0;
+            buzzer_count = 0;
+        } else {
+            buzzer_count++;
+            TMR0 = 100;
+        }
     }
 }
 
@@ -72,12 +97,19 @@ int main(int argc, char** argv) {
     SPBRGH = 0;
     SPBRGL = 12;
 
+    TMR0CS = 0;
+    PSA = 0;
+    PS0 = 1;
+    PS1 = 1;
+    PS2 = 0;
+
     GIE = 1;
     RCIE = 1;
     PEIE = 1;
 
     LED_HB = 0;
     LED_DOOR = 0;
+    BUZZER = 1;
 
     while (1);
     return (EXIT_SUCCESS);

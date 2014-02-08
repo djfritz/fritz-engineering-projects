@@ -4065,9 +4065,13 @@ SPBRGH = 0;
 SPBRGL = 12;
 
 while (1) {
-_delay((unsigned long)((500)*(500000/4000.0)));
+_delay((unsigned long)((2000)*(500000/4000.0)));
 while (!TRMT);
-TXREG = RB6;
+if (RB6) {
+TXREG = 1;
+} else {
+TXREG = 2;
+}
 }
 return (0);
 }
