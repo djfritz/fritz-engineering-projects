@@ -1,0 +1,28 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  6h - 7h
+  92h - 1000Dh
+  10012h - 1003Fh
+  
+ dist/default/debug/max_bell.X.debug.hex ranges:
+  0h - 5h
+  8h - 91h
+  1000Eh - 10011h
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  X = Find & delete opcode
+  1 = dist/default/debug/max_bell.X.debug.hex
+00000000: 111111--11111111111111111111111111111111111111111111111111111111
+00000040: 1111111111111111111111111111111111111111111111111111111111111111
+00000080: 111111111111111111----------------------------------------------
+00010000: --------------1111----------------------------------------------

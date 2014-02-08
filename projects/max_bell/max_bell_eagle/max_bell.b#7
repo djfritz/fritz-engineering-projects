@@ -56,10 +56,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="63.5" y2="0" width="0" layer="20"/>
-<wire x1="63.5" y1="0" x2="63.5" y2="63.5" width="0" layer="20"/>
-<wire x1="63.5" y1="63.5" x2="0" y2="63.5" width="0" layer="20"/>
-<wire x1="0" y1="63.5" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="68.25" y2="0" width="0" layer="20"/>
+<wire x1="68.25" y1="0" x2="68.25" y2="64.76" width="0" layer="20"/>
+<wire x1="68.25" y1="64.76" x2="0" y2="64.76" width="0" layer="20"/>
+<wire x1="0" y1="64.76" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="fritz">
@@ -1803,7 +1803,7 @@ Grid 5.08 mm&lt;p&gt;
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="ITEADstudio_DRC *">
+<designrules name="default">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -1818,28 +1818,26 @@ a wide range of applications. Your particular design
 may have different requirements, so please make the
 necessary adjustments and save your customized
 design rules under a new name.</description>
-<description language="zh">&lt;b&gt;Seeed Studio EAGLE Design Rules&lt;/b&gt;
-</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
-<param name="mdSmdPad" value="0mil"/>
-<param name="mdSmdVia" value="0mil"/>
-<param name="mdSmdSmd" value="0mil"/>
+<param name="mdWireWire" value="8mil"/>
+<param name="mdWirePad" value="8mil"/>
+<param name="mdWireVia" value="8mil"/>
+<param name="mdPadPad" value="8mil"/>
+<param name="mdPadVia" value="8mil"/>
+<param name="mdViaVia" value="8mil"/>
+<param name="mdSmdPad" value="8mil"/>
+<param name="mdSmdVia" value="8mil"/>
+<param name="mdSmdSmd" value="8mil"/>
 <param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="10mil"/>
-<param name="mdDrill" value="10mil"/>
+<param name="mdCopperDimension" value="40mil"/>
+<param name="mdDrill" value="8mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="15mil"/>
-<param name="msDrill" value="12mil"/>
-<param name="msMicroVia" value="12mil"/>
+<param name="msWidth" value="10mil"/>
+<param name="msDrill" value="24mil"/>
+<param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
 <param name="rvPadInner" value="0.25"/>
@@ -1854,9 +1852,9 @@ design rules under a new name.</description>
 <param name="rlMaxPadInner" value="20mil"/>
 <param name="rlMinPadBottom" value="10mil"/>
 <param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="6mil"/>
+<param name="rlMinViaOuter" value="8mil"/>
 <param name="rlMaxViaOuter" value="20mil"/>
-<param name="rlMinViaInner" value="6mil"/>
+<param name="rlMinViaInner" value="8mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
 <param name="rlMinMicroViaOuter" value="4mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
@@ -1864,16 +1862,16 @@ design rules under a new name.</description>
 <param name="rlMaxMicroViaInner" value="20mil"/>
 <param name="psTop" value="-1"/>
 <param name="psBottom" value="-1"/>
-<param name="psFirst" value="0"/>
+<param name="psFirst" value="-1"/>
 <param name="psElongationLong" value="100"/>
 <param name="psElongationOffset" value="100"/>
 <param name="mvStopFrame" value="1"/>
 <param name="mvCreamFrame" value="0"/>
-<param name="mlMinStopFrame" value="2mil"/>
-<param name="mlMaxStopFrame" value="2mil"/>
+<param name="mlMinStopFrame" value="4mil"/>
+<param name="mlMaxStopFrame" value="4mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="100mil"/>
+<param name="mlViaStopLimit" value="0mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -1884,7 +1882,7 @@ design rules under a new name.</description>
 <param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
-<param name="checkRestrict" value="0"/>
+<param name="checkRestrict" value="1"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -1982,45 +1980,45 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="fritz" package="DIL20" value="PIC16F1829" x="13.97" y="25.4" rot="R270"/>
-<element name="XB1" library="maxstream" package="XBEE-PRO" value="XBEE-PRO" x="39.37" y="46.99">
-<attribute name="OC_NEWARK" value="42M2667" x="64.77" y="26.67" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="XBP24-AWI-001" x="64.77" y="26.67" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="64.77" y="26.67" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1337916" x="64.77" y="26.67" size="1.778" layer="27" display="off"/>
+<element name="U$1" library="fritz" package="DIL20" value="PIC16F1829" x="16.51" y="25.4" rot="R270"/>
+<element name="XB1" library="maxstream" package="XBEE-PRO" value="XBEE-PRO" x="46.99" y="48.26">
+<attribute name="OC_NEWARK" value="42M2667" x="72.39" y="27.94" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="XBP24-AWI-001" x="72.39" y="27.94" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="72.39" y="27.94" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="1337916" x="72.39" y="27.94" size="1.778" layer="27" display="off"/>
 </element>
-<element name="GPIO" library="pinhead" package="1X08/90" value="" x="43.18" y="1.27" rot="R180"/>
-<element name="C1" library="rcl" package="C050-035X075" value="10nF" x="31.75" y="22.86"/>
-<element name="C2" library="rcl" package="C050-035X075" value="100nF" x="31.75" y="15.24"/>
-<element name="C3" library="rcl" package="C050-035X075" value="22uF" x="40.64" y="15.24"/>
-<element name="C4" library="rcl" package="C050-035X075" value=".47uF" x="40.64" y="22.86"/>
-<element name="R1" library="rcl" package="0309/12" value="10K" x="34.29" y="39.37" rot="R90"/>
-<element name="MCLR" library="rcl" package="0309/12" value="100" x="3.81" y="34.29" rot="R270"/>
+<element name="GPIO" library="pinhead" package="1X08/90" value="" x="46.99" y="2.54" rot="R180"/>
+<element name="C1" library="rcl" package="C050-035X075" value="10nF" x="6.35" y="40.64"/>
+<element name="C2" library="rcl" package="C050-035X075" value="100nF" x="6.35" y="36.83"/>
+<element name="C3" library="rcl" package="C050-035X075" value="22uF" x="6.35" y="29.21"/>
+<element name="C4" library="rcl" package="C050-035X075" value=".47uF" x="6.35" y="33.02"/>
+<element name="R1" library="rcl" package="0309/12" value="10K" x="30.48" y="26.67" rot="R90"/>
+<element name="MCLR" library="rcl" package="0309/12" value="100" x="25.4" y="41.91" rot="R270"/>
 <element name="ICSP" library="pinhead" package="1X06" value="" x="3.81" y="17.78" rot="R90"/>
-<element name="U$2" library="fritz" package="DCJACKFP" value="DCJACK" x="13.97" y="3.81"/>
-<element name="U$3" library="fritz" package="TO220V" value="MIC2940A" x="22.86" y="17.78" rot="R270"/>
-<element name="HEARTBEAT" library="led" package="LED5MM" value="" x="13.97" y="58.42" rot="R270"/>
-<element name="DOOR_OPEN" library="led" package="LED5MM" value="" x="21.59" y="58.42" rot="R270"/>
-<element name="R2" library="rcl" package="0309/12" value="1K" x="45.72" y="49.53" rot="R90"/>
-<element name="R3" library="rcl" package="0309/12" value="1K" x="38.1" y="49.53" rot="R90"/>
-<element name="U$4" library="fritz" package="BUZZER" value="BUZZER" x="10.16" y="46.99"/>
-<element name="X1" library="con-wago-508" package="W237-132" value="" x="26.67" y="6.35">
-<attribute name="OC_NEWARK" value="unknown" x="62.23" y="-48.26" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="62.23" y="-48.26" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="62.23" y="-48.26" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="62.23" y="-48.26" size="1.778" layer="27" display="off"/>
+<element name="U$2" library="fritz" package="DCJACKFP" value="DCJACK" x="16.51" y="3.81"/>
+<element name="U$3" library="fritz" package="TO220V" value="MIC2940A" x="30.48" y="13.97"/>
+<element name="HEARTBEAT" library="led" package="LED5MM" value="" x="13.97" y="59.69"/>
+<element name="DOOR_OPEN" library="led" package="LED5MM" value="" x="29.21" y="59.69"/>
+<element name="R2" library="rcl" package="0309/12" value="1K" x="30.48" y="41.91" rot="R90"/>
+<element name="R3" library="rcl" package="0309/12" value="1K" x="13.97" y="49.53" rot="R180"/>
+<element name="U$4" library="fritz" package="BUZZER" value="BUZZER" x="43.18" y="15.24"/>
+<element name="X1" library="con-wago-508" package="W237-132" value="" x="30.48" y="6.35">
+<attribute name="OC_NEWARK" value="unknown" x="66.04" y="-48.26" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="66.04" y="-48.26" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="66.04" y="-48.26" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="66.04" y="-48.26" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R4" library="rcl" package="0309/12" value="10K" x="41.91" y="39.37" rot="R90"/>
+<element name="R4" library="rcl" package="0309/12" value="10K" x="25.4" y="26.67" rot="R90"/>
 <element name="U$5" library="holes" package="3,0" value="" x="5.08" y="5.08"/>
-<element name="U$6" library="holes" package="3,0" value="" x="5.08" y="58.42"/>
-<element name="U$7" library="holes" package="3,0" value="" x="58.42" y="58.42"/>
-<element name="U$8" library="holes" package="3,0" value="" x="58.42" y="5.08"/>
+<element name="U$6" library="holes" package="3,0" value="" x="5.08" y="59.69"/>
+<element name="U$7" library="holes" package="3,0" value="" x="63.5" y="59.69"/>
+<element name="U$8" library="holes" package="3,0" value="" x="63.5" y="5.08"/>
 </elements>
 <signals>
 <signal name="TX">
 <contactref element="XB1" pad="3"/>
 <contactref element="U$1" pad="10"/>
-<wire x1="10.16" y1="13.97" x2="28.37" y2="51.99" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="13.97" x2="35.99" y2="53.26" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VDD">
 <contactref element="U$1" pad="1"/>
@@ -2032,14 +2030,14 @@ design rules under a new name.</description>
 <contactref element="C3" pad="1"/>
 <contactref element="U$3" pad="3"/>
 <contactref element="R4" pad="2"/>
-<wire x1="34.29" y1="45.72" x2="41.91" y2="45.72" width="0" layer="19" extent="1-1"/>
-<wire x1="29.21" y1="15.24" x2="34.29" y2="45.72" width="0" layer="19" extent="1-1"/>
-<wire x1="38.1" y1="15.24" x2="29.21" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="13.97" x2="38.1" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="24.13" y1="15.24" x2="3.81" y2="13.97" width="0" layer="19" extent="1-1"/>
-<wire x1="29.21" y1="22.86" x2="24.13" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="10.16" y1="36.83" x2="29.21" y2="22.86" width="0" layer="19" extent="1-1"/>
-<wire x1="28.37" y1="55.99" x2="10.16" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="33.02" x2="25.4" y2="33.02" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="36.83" x2="30.48" y2="33.02" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="29.21" x2="3.81" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="13.97" x2="3.81" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="15.24" x2="3.81" y2="13.97" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="40.64" x2="33.02" y2="15.24" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="36.83" x2="3.81" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="35.99" y1="57.26" x2="12.7" y2="36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="20"/>
@@ -2056,92 +2054,92 @@ design rules under a new name.</description>
 <contactref element="R3" pad="1"/>
 <contactref element="U$4" pad="2"/>
 <contactref element="X1" pad="2"/>
-<wire x1="43.18" y1="15.24" x2="34.29" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="43.18" y1="22.86" x2="43.18" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="16.51" x2="43.18" y2="22.86" width="0" layer="19" extent="1-1"/>
-<wire x1="45.72" y1="43.18" x2="3.81" y2="16.51" width="0" layer="19" extent="1-1"/>
-<wire x1="18.77" y1="6.35" x2="34.29" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="13.97" y1="3.35" x2="18.77" y2="6.35" width="0" layer="19" extent="1-1"/>
-<wire x1="29.21" y1="5.715" x2="13.97" y2="3.35" width="0" layer="19" extent="1-1"/>
-<wire x1="24.13" y1="17.78" x2="29.21" y2="5.715" width="0" layer="19" extent="1-1"/>
-<wire x1="34.29" y1="22.86" x2="24.13" y2="17.78" width="0" layer="19" extent="1-1"/>
-<wire x1="17.78" y1="36.83" x2="34.29" y2="22.86" width="0" layer="19" extent="1-1"/>
-<wire x1="38.1" y1="43.18" x2="45.72" y2="43.18" width="0" layer="19" extent="1-1"/>
-<wire x1="28.37" y1="37.99" x2="17.78" y2="36.83" width="0" layer="19" extent="1-1"/>
-<wire x1="13.9112" y1="46.99" x2="28.37" y2="37.99" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="29.21" x2="8.89" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="33.02" x2="8.89" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="16.51" x2="8.89" y2="33.02" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="35.56" x2="3.81" y2="16.51" width="0" layer="19" extent="1-1"/>
+<wire x1="21.31" y1="6.35" x2="8.89" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="16.51" y1="3.35" x2="21.31" y2="6.35" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="5.715" x2="16.51" y2="3.35" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="15.24" x2="33.02" y2="5.715" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="40.64" x2="30.48" y2="15.24" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="36.83" x2="8.89" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="49.53" x2="30.48" y2="35.56" width="0" layer="19" extent="1-1"/>
+<wire x1="35.99" y1="39.26" x2="20.32" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="46.9312" y1="15.24" x2="35.99" y2="39.26" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RX">
 <contactref element="XB1" pad="2"/>
 <contactref element="U$1" pad="12"/>
-<wire x1="17.78" y1="16.51" x2="28.37" y2="53.99" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="16.51" x2="35.99" y2="55.26" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BUZZER">
 <contactref element="U$1" pad="13"/>
 <contactref element="U$4" pad="1"/>
-<wire x1="17.78" y1="19.05" x2="6.4088" y2="46.99" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="19.05" x2="39.4288" y2="15.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TERMINAL_BLOCK">
 <contactref element="U$1" pad="11"/>
 <contactref element="X1" pad="1"/>
 <contactref element="R4" pad="1"/>
-<wire x1="24.13" y1="5.715" x2="41.91" y2="33.02" width="0" layer="19" extent="1-1"/>
-<wire x1="17.78" y1="13.97" x2="24.13" y2="5.715" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="5.715" x2="25.4" y2="20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="13.97" x2="27.94" y2="5.715" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_0">
 <contactref element="U$1" pad="16"/>
 <contactref element="GPIO" pad="1"/>
 <contactref element="HEARTBEAT" pad="A"/>
-<wire x1="17.78" y1="26.67" x2="13.97" y2="59.69" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="5.08" x2="17.78" y2="26.67" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="26.67" x2="12.7" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="55.88" y1="6.35" x2="20.32" y2="26.67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_1">
 <contactref element="U$1" pad="15"/>
 <contactref element="GPIO" pad="2"/>
 <contactref element="DOOR_OPEN" pad="A"/>
-<wire x1="17.78" y1="24.13" x2="49.53" y2="5.08" width="0" layer="19" extent="1-1"/>
-<wire x1="21.59" y1="59.69" x2="17.78" y2="24.13" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="24.13" x2="53.34" y2="6.35" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="59.69" x2="20.32" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_2">
 <contactref element="U$1" pad="14"/>
 <contactref element="GPIO" pad="3"/>
-<wire x1="17.78" y1="21.59" x2="46.99" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="21.59" x2="50.8" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_7">
 <contactref element="U$1" pad="9"/>
 <contactref element="GPIO" pad="8"/>
-<wire x1="10.16" y1="16.51" x2="34.29" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="16.51" x2="38.1" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_6">
 <contactref element="U$1" pad="8"/>
 <contactref element="GPIO" pad="7"/>
-<wire x1="10.16" y1="19.05" x2="36.83" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="19.05" x2="40.64" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_3">
 <contactref element="U$1" pad="7"/>
 <contactref element="GPIO" pad="4"/>
-<wire x1="10.16" y1="21.59" x2="44.45" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="21.59" x2="48.26" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_4">
 <contactref element="U$1" pad="6"/>
 <contactref element="GPIO" pad="5"/>
-<wire x1="10.16" y1="24.13" x2="41.91" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="24.13" x2="45.72" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GPIO_5">
 <contactref element="U$1" pad="5"/>
 <contactref element="GPIO" pad="6"/>
-<wire x1="10.16" y1="26.67" x2="39.37" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="26.67" x2="43.18" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$1" pad="4"/>
 <contactref element="MCLR" pad="1"/>
-<wire x1="3.81" y1="40.64" x2="10.16" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="48.26" x2="12.7" y2="29.21" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MCLR">
 <contactref element="MCLR" pad="2"/>
 <contactref element="ICSP" pad="1"/>
 <contactref element="R1" pad="1"/>
-<wire x1="3.81" y1="11.43" x2="34.29" y2="33.02" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="27.94" x2="3.81" y2="11.43" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="11.43" x2="30.48" y2="20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="35.56" x2="3.81" y2="11.43" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ICSPDAT">
 <contactref element="ICSP" pad="4"/>
@@ -2153,18 +2151,18 @@ design rules under a new name.</description>
 <contactref element="U$2" pad="1"/>
 <contactref element="C4" pad="1"/>
 <contactref element="U$3" pad="1"/>
-<wire x1="38.1" y1="22.86" x2="13.97" y2="9.45" width="0" layer="19" extent="1-1"/>
-<wire x1="24.13" y1="20.32" x2="38.1" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="33.02" x2="16.51" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="15.24" x2="3.81" y2="33.02" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="HEARTBEAT" pad="K"/>
 <contactref element="R2" pad="2"/>
-<wire x1="13.97" y1="57.15" x2="45.72" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="59.69" x2="30.48" y2="48.26" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="DOOR_OPEN" pad="K"/>
 <contactref element="R3" pad="2"/>
-<wire x1="21.59" y1="57.15" x2="38.1" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="59.69" x2="7.62" y2="49.53" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
