@@ -47,6 +47,7 @@ int buzzer_count = 0;
 
 void interrupt intr(void) {
     if (RCIF) {
+        RCIF = 0;
         // receive uart interrupt
         char data = RCREG;
         if (data == 1 && last == 0) {
@@ -54,6 +55,7 @@ void interrupt intr(void) {
             BUZZER = 0;
             TMR0 = 100;
             TMR0IE = 1;
+            TMR0IF = 0;
             last = 1;
         } else if (data == 2) {
             LED_DOOR = 0;
@@ -71,6 +73,7 @@ void interrupt intr(void) {
         TMR0IF = 0;
         if (buzzer_count == BUZZER_COUNT_MAX) {
             TMR0IE = 0;
+            BUZZER = 1;
             buzzer_count = 0;
         } else {
             buzzer_count++;
