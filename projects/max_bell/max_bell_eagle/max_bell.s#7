@@ -8910,12 +8910,22 @@ Grid 5.08 mm&lt;p&gt;
 <wire x1="-20.32" y1="53.34" x2="-27.94" y2="53.34" width="0.1524" layer="91"/>
 <label x="-40.64" y="53.34" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="RA0/ICSPDAT"/>
+<wire x1="53.34" y1="109.22" x2="58.42" y2="109.22" width="0.1524" layer="91"/>
+<label x="58.42" y="109.22" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="ICSPCLK" class="0">
 <segment>
 <pinref part="ICSP" gate="A" pin="5"/>
 <wire x1="-20.32" y1="50.8" x2="-27.94" y2="50.8" width="0.1524" layer="91"/>
 <label x="-40.64" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="RA1/ICSPCLK"/>
+<wire x1="53.34" y1="106.68" x2="58.42" y2="106.68" width="0.1524" layer="91"/>
+<label x="58.42" y="106.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VCC" class="0">

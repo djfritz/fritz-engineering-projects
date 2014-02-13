@@ -18,8 +18,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "151 /opt/microchip/xc8/v1.20/include/pic.h
 [v __delay `(v ~T0 @X0 0 ef1`ul ]
 [p i __delay ]
+"7247 /opt/microchip/xc8/v1.20/include/pic16f1829.h
+[v _INTF `Vb ~T0 @X0 0 e@89 ]
 [p mainexit ]
-"2878 /opt/microchip/xc8/v1.20/include/pic16f1829.h
+"2878
 [v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
 "2924
 [v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
@@ -65,6 +67,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCIE `Vb ~T0 @X0 0 e@1165 ]
 "7469
 [v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"7245
+[v _INTEDG `Vb ~T0 @X0 0 e@1198 ]
+"7243
+[v _INTE `Vb ~T0 @X0 0 e@92 ]
 [; ;pic16f1829.h: 44: extern volatile unsigned char INDF0 @ 0x000;
 "46 /opt/microchip/xc8/v1.20/include/pic16f1829.h
 [; ;pic16f1829.h: 46: asm("INDF0 equ 00h");
@@ -3061,11 +3067,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 110: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 112: extern char * ftoa(float f, int * status);
 "45
-[v _last `i ~T0 @X0 1 e ]
-[i _last
+[v _trigger `i ~T0 @X0 1 e ]
+[i _trigger
 -> 0 `i
 ]
-[; ;max_bell.c: 45: int last = 0;
+[; ;max_bell.c: 45: int trigger = 0;
 "46
 [v _buzzer_count `i ~T0 @X0 1 e ]
 [i _buzzer_count
@@ -3090,9 +3096,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _data `uc ~T0 @X0 1 a ]
 [; ;max_bell.c: 52: char data = RCREG;
 [e = _data _RCREG ]
-[; ;max_bell.c: 53: if (data == 1 && last == 0) {
+[; ;max_bell.c: 53: if (data == 1 && trigger == 0) {
 "53
-[e $ ! && == -> _data `i -> 1 `i == _last -> 0 `i 375  ]
+[e $ ! && == -> _data `i -> 1 `i == _trigger -> 0 `i 375  ]
 {
 [; ;max_bell.c: 54: RC1 = 1;
 "54
@@ -3109,22 +3115,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;max_bell.c: 58: TMR0IF = 0;
 "58
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;max_bell.c: 59: last = 1;
+[; ;max_bell.c: 59: trigger = 2;
 "59
-[e = _last -> 1 `i ]
+[e = _trigger -> 2 `i ]
 "60
 }
-[; ;max_bell.c: 60: } else if (data == 2) {
+[; ;max_bell.c: 60: } else if (data == 2 && trigger == 1) {
 [e $U 376  ]
 [e :U 375 ]
-[e $ ! == -> _data `i -> 2 `i 377  ]
+[e $ ! && == -> _data `i -> 2 `i == _trigger -> 1 `i 377  ]
 {
 [; ;max_bell.c: 61: RC1 = 0;
 "61
 [e = _RC1 -> -> 0 `i `b ]
-[; ;max_bell.c: 62: last = 0;
+[; ;max_bell.c: 62: trigger = 0;
 "62
-[e = _last -> 0 `i ]
+[e = _trigger -> 0 `i ]
 "63
 }
 [e :U 377 ]
@@ -3141,10 +3147,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _RC0 -> -> 0 `i `b ]
 "71
 }
-[; ;max_bell.c: 71: } else if (TMR0IF) {
+[; ;max_bell.c: 71: } else if (TMR0IF && TMR0IE) {
 [e $U 378  ]
 [e :U 374 ]
-[e $ ! _TMR0IF 379  ]
+[e $ ! && _TMR0IF _TMR0IE 379  ]
 {
 [; ;max_bell.c: 72: RB4 = !RB4;
 "72
@@ -3182,111 +3188,143 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 381 ]
 "82
 }
-[e :U 379 ]
-"83
-[e :U 378 ]
 [; ;max_bell.c: 81: }
-[; ;max_bell.c: 82: }
-[; ;max_bell.c: 83: }
+[; ;max_bell.c: 82: } else if (INTF) {
+[e $U 382  ]
+[e :U 379 ]
+[e $ ! _INTF 383  ]
+{
+[; ;max_bell.c: 84: INTF = 0;
+"84
+[e = _INTF -> -> 0 `i `b ]
+[; ;max_bell.c: 85: TMR0IE = 0;
+"85
+[e = _TMR0IE -> -> 0 `i `b ]
+[; ;max_bell.c: 86: RB4 = 1;
+"86
+[e = _RB4 -> -> 1 `i `b ]
+[; ;max_bell.c: 87: RC1 = 0;
+"87
+[e = _RC1 -> -> 0 `i `b ]
+[; ;max_bell.c: 88: buzzer_count = 0;
+"88
+[e = _buzzer_count -> 0 `i ]
+[; ;max_bell.c: 89: trigger = 1;
+"89
+[e = _trigger -> 1 `i ]
+"90
+}
+[e :U 383 ]
+"91
+[e :U 382 ]
+[e :U 378 ]
+[; ;max_bell.c: 90: }
+[; ;max_bell.c: 91: }
 [e :UE 373 ]
 }
-"85
+"93
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
-[; ;max_bell.c: 85: int main(int argc, char** argv) {
+[; ;max_bell.c: 93: int main(int argc, char** argv) {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;max_bell.c: 86: ANSELA=0;
-"86
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;max_bell.c: 87: ANSELB=0;
-"87
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;max_bell.c: 88: ANSELC=0;
-"88
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;max_bell.c: 89: TRISA = 0xff;
-"89
-[e = _TRISA -> -> 255 `i `uc ]
-[; ;max_bell.c: 90: TRISB = 0xef;
-"90
-[e = _TRISB -> -> 239 `i `uc ]
-[; ;max_bell.c: 91: TRISC = 0xfc;
-"91
-[e = _TRISC -> -> 252 `i `uc ]
-[; ;max_bell.c: 93: RXDTSEL = 0;
-"93
-[e = _RXDTSEL -> -> 0 `i `b ]
-[; ;max_bell.c: 94: TXCKSEL = 0;
+[; ;max_bell.c: 94: ANSELA=0;
 "94
-[e = _TXCKSEL -> -> 0 `i `b ]
-[; ;max_bell.c: 95: CREN = 1;
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;max_bell.c: 95: ANSELB=0;
 "95
-[e = _CREN -> -> 1 `i `b ]
-[; ;max_bell.c: 96: SYNC = 0;
+[e = _ANSELB -> -> 0 `i `uc ]
+[; ;max_bell.c: 96: ANSELC=0;
 "96
-[e = _SYNC -> -> 0 `i `b ]
-[; ;max_bell.c: 97: SPEN = 1;
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;max_bell.c: 97: TRISA = 0xff;
 "97
-[e = _SPEN -> -> 1 `i `b ]
-[; ;max_bell.c: 98: BRG16 = 1;
+[e = _TRISA -> -> 255 `i `uc ]
+[; ;max_bell.c: 98: TRISB = 0xef;
 "98
-[e = _BRG16 -> -> 1 `i `b ]
-[; ;max_bell.c: 99: BRGH = 1;
+[e = _TRISB -> -> 239 `i `uc ]
+[; ;max_bell.c: 99: TRISC = 0xfc;
 "99
-[e = _BRGH -> -> 1 `i `b ]
-[; ;max_bell.c: 100: SPBRGH = 0;
-"100
-[e = _SPBRGH -> -> 0 `i `uc ]
-[; ;max_bell.c: 101: SPBRGL = 12;
+[e = _TRISC -> -> 252 `i `uc ]
+[; ;max_bell.c: 101: RXDTSEL = 0;
 "101
-[e = _SPBRGL -> -> 12 `i `uc ]
-[; ;max_bell.c: 103: TMR0CS = 0;
+[e = _RXDTSEL -> -> 0 `i `b ]
+[; ;max_bell.c: 102: TXCKSEL = 0;
+"102
+[e = _TXCKSEL -> -> 0 `i `b ]
+[; ;max_bell.c: 103: CREN = 1;
 "103
-[e = _TMR0CS -> -> 0 `i `b ]
-[; ;max_bell.c: 104: PSA = 0;
+[e = _CREN -> -> 1 `i `b ]
+[; ;max_bell.c: 104: SYNC = 0;
 "104
-[e = _PSA -> -> 0 `i `b ]
-[; ;max_bell.c: 105: PS0 = 1;
+[e = _SYNC -> -> 0 `i `b ]
+[; ;max_bell.c: 105: SPEN = 1;
 "105
-[e = _PS0 -> -> 1 `i `b ]
-[; ;max_bell.c: 106: PS1 = 1;
+[e = _SPEN -> -> 1 `i `b ]
+[; ;max_bell.c: 106: BRG16 = 1;
 "106
-[e = _PS1 -> -> 1 `i `b ]
-[; ;max_bell.c: 107: PS2 = 0;
+[e = _BRG16 -> -> 1 `i `b ]
+[; ;max_bell.c: 107: BRGH = 1;
 "107
-[e = _PS2 -> -> 0 `i `b ]
-[; ;max_bell.c: 109: GIE = 1;
+[e = _BRGH -> -> 1 `i `b ]
+[; ;max_bell.c: 108: SPBRGH = 0;
+"108
+[e = _SPBRGH -> -> 0 `i `uc ]
+[; ;max_bell.c: 109: SPBRGL = 12;
 "109
-[e = _GIE -> -> 1 `i `b ]
-[; ;max_bell.c: 110: RCIE = 1;
-"110
-[e = _RCIE -> -> 1 `i `b ]
-[; ;max_bell.c: 111: PEIE = 1;
+[e = _SPBRGL -> -> 12 `i `uc ]
+[; ;max_bell.c: 111: TMR0CS = 0;
 "111
-[e = _PEIE -> -> 1 `i `b ]
-[; ;max_bell.c: 113: RC0 = 0;
+[e = _TMR0CS -> -> 0 `i `b ]
+[; ;max_bell.c: 112: PSA = 0;
+"112
+[e = _PSA -> -> 0 `i `b ]
+[; ;max_bell.c: 113: PS0 = 1;
 "113
-[e = _RC0 -> -> 0 `i `b ]
-[; ;max_bell.c: 114: RC1 = 0;
+[e = _PS0 -> -> 1 `i `b ]
+[; ;max_bell.c: 114: PS1 = 1;
 "114
-[e = _RC1 -> -> 0 `i `b ]
-[; ;max_bell.c: 115: RB4 = 1;
+[e = _PS1 -> -> 1 `i `b ]
+[; ;max_bell.c: 115: PS2 = 0;
 "115
-[e = _RB4 -> -> 1 `i `b ]
-[; ;max_bell.c: 117: while (1);
+[e = _PS2 -> -> 0 `i `b ]
+[; ;max_bell.c: 117: GIE = 1;
 "117
-[e :U 384 ]
-[e :U 383 ]
-[e $U 384  ]
-[e :U 385 ]
-[; ;max_bell.c: 118: return (0);
+[e = _GIE -> -> 1 `i `b ]
+[; ;max_bell.c: 118: RCIE = 1;
 "118
-[e ) -> 0 `i ]
-[e $UE 382  ]
-[; ;max_bell.c: 119: }
+[e = _RCIE -> -> 1 `i `b ]
+[; ;max_bell.c: 119: PEIE = 1;
 "119
-[e :UE 382 ]
+[e = _PEIE -> -> 1 `i `b ]
+[; ;max_bell.c: 121: INTEDG = 0;
+"121
+[e = _INTEDG -> -> 0 `i `b ]
+[; ;max_bell.c: 122: INTE = 1;
+"122
+[e = _INTE -> -> 1 `i `b ]
+[; ;max_bell.c: 124: RC0 = 0;
+"124
+[e = _RC0 -> -> 0 `i `b ]
+[; ;max_bell.c: 125: RC1 = 0;
+"125
+[e = _RC1 -> -> 0 `i `b ]
+[; ;max_bell.c: 126: RB4 = 1;
+"126
+[e = _RB4 -> -> 1 `i `b ]
+[; ;max_bell.c: 128: while (1);
+"128
+[e :U 386 ]
+[e :U 385 ]
+[e $U 386  ]
+[e :U 387 ]
+[; ;max_bell.c: 129: return (0);
+"129
+[e ) -> 0 `i ]
+[e $UE 384  ]
+[; ;max_bell.c: 130: }
+"130
+[e :UE 384 ]
 }

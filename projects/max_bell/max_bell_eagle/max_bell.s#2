@@ -8650,7 +8650,7 @@ Grid 5.08 mm&lt;p&gt;
 <instance part="DOOR_OPEN" gate="G$1" x="104.14" y="50.8" rot="R90"/>
 <instance part="R2" gate="G$1" x="116.84" y="63.5" rot="R180"/>
 <instance part="R3" gate="G$1" x="116.84" y="50.8" rot="R180"/>
-<instance part="U$4" gate="G$1" x="106.68" y="35.56"/>
+<instance part="U$4" gate="G$1" x="106.68" y="35.56" rot="MR0"/>
 <instance part="X1" gate="-1" x="-22.86" y="25.4"/>
 <instance part="X1" gate="-2" x="-22.86" y="20.32"/>
 <instance part="R4" gate="G$1" x="-15.24" y="33.02" rot="R90"/>
@@ -8719,7 +8719,7 @@ Grid 5.08 mm&lt;p&gt;
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="33.02" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="33.02" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
 <label x="119.38" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -8806,7 +8806,7 @@ Grid 5.08 mm&lt;p&gt;
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="1"/>
-<wire x1="101.6" y1="33.02" x2="93.98" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="33.02" x2="93.98" y2="33.02" width="0.1524" layer="91"/>
 <label x="83.82" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>

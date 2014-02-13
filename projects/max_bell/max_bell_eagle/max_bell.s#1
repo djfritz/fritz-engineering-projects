@@ -135,6 +135,20 @@
 <text x="-2.54" y="6.35" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-3.8862" y="-3.81" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="MOMENTARY_SWITCH">
+<wire x1="-3.175" y1="1.27" x2="0" y2="1.27" width="0.2032" layer="51"/>
+<wire x1="-3.175" y1="-1.27" x2="0" y2="-1.27" width="0.2032" layer="51"/>
+<wire x1="0" y1="1.27" x2="0" y2="-1.27" width="0.2032" layer="51" curve="-180"/>
+<wire x1="-1.375" y1="1.275" x2="-1.35" y2="-1.3" width="0.2032" layer="51" curve="-273.242292"/>
+<circle x="-3.175" y="0" radius="1.27" width="0.2032" layer="51"/>
+<pad name="1" x="-2.54" y="2.54" drill="1.1" diameter="2.1844" rot="R90"/>
+<pad name="2" x="2.54" y="2.54" drill="1.1" diameter="2.1844" rot="R90"/>
+<pad name="3" x="-2.54" y="-2.54" drill="1.1" diameter="2.1844" rot="R90"/>
+<pad name="4" x="2.54" y="-2.54" drill="1.1" diameter="2.1844" rot="R90"/>
+<text x="-5.08" y="6.35" size="1.778" layer="25">&gt;NAME</text>
+<text x="-5.08" y="-8.89" size="1.778" layer="27">&gt;VALUE</text>
+<circle x="0" y="0" radius="6.35" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MICROCHIP20">
@@ -217,6 +231,15 @@
 <text x="-3.81" y="-5.715" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="2" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
 <pin name="1" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
+</symbol>
+<symbol name="SWITCH_MOMENTARY">
+<wire x1="-2.54" y1="0" x2="2.54" y2="0.889" width="0.254" layer="94"/>
+<circle x="-2.54" y="0" radius="0.2839" width="0" layer="94"/>
+<circle x="2.54" y="0" radius="0.2839" width="0" layer="94"/>
+<text x="-3.81" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -301,6 +324,26 @@ http://ww1.microchip.com/downloads/en/DeviceDoc/41440C.pdf</description>
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SWITCH_MOMENTARY">
+<description>C&amp;K Momentary switches
+
+
+http://www.ck-components.com/13327/d6_9feb.pdf/</description>
+<gates>
+<gate name="G$1" symbol="SWITCH_MOMENTARY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOMENTARY_SWITCH">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8629,6 +8672,8 @@ Grid 5.08 mm&lt;p&gt;
 <part name="X1" library="con-wago-508" deviceset="W237-02P" device=""/>
 <part name="R4" library="rcl" deviceset="R-US_" device="0309/12" value="10K"/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X10" device=""/>
+<part name="U$5" library="fritz" deviceset="SWITCH_MOMENTARY" device=""/>
+<part name="R5" library="rcl" deviceset="R-US_" device="0309/12" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -8655,6 +8700,8 @@ Grid 5.08 mm&lt;p&gt;
 <instance part="X1" gate="-2" x="-22.86" y="20.32"/>
 <instance part="R4" gate="G$1" x="-15.24" y="33.02" rot="R90"/>
 <instance part="JP1" gate="A" x="12.7" y="60.96"/>
+<instance part="U$5" gate="G$1" x="68.58" y="17.78"/>
+<instance part="R5" gate="G$1" x="58.42" y="25.4" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8722,6 +8769,11 @@ Grid 5.08 mm&lt;p&gt;
 <wire x1="101.6" y1="33.02" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
 <label x="119.38" y="33.02" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="58.42" y1="30.48" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
+<label x="55.88" y="33.02" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -8784,6 +8836,11 @@ Grid 5.08 mm&lt;p&gt;
 <pinref part="JP1" gate="A" pin="1"/>
 <wire x1="10.16" y1="71.12" x2="2.54" y2="71.12" width="0.1524" layer="91"/>
 <label x="-2.54" y="71.12" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="2"/>
+<wire x1="73.66" y1="17.78" x2="78.74" y2="17.78" width="0.1524" layer="91"/>
+<label x="78.74" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -8869,6 +8926,14 @@ Grid 5.08 mm&lt;p&gt;
 <pinref part="JP1" gate="A" pin="5"/>
 <wire x1="10.16" y1="60.96" x2="2.54" y2="60.96" width="0.1524" layer="91"/>
 <label x="-5.08" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="17.78" x2="58.42" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="17.78" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<label x="48.26" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GPIO_7" class="0">

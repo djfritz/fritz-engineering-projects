@@ -4046,7 +4046,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 extern char * ftoa(float f, int * status);
 
 # 45 "max_bell.c"
-int last = 0;
+int trigger = 0;
 int buzzer_count = 0;
 
 void interrupt intr(void) {
@@ -4054,23 +4054,23 @@ if (RCIF) {
 RCIF = 0;
 
 char data = RCREG;
-if (data == 1 && last == 0) {
+if (data == 1 && trigger == 0) {
 RC1 = 1;
 RB4 = 0;
 TMR0 = 100;
 TMR0IE = 1;
 TMR0IF = 0;
-last = 1;
-} else if (data == 2) {
+trigger = 2;
+} else if (data == 2 && trigger == 1) {
 RC1 = 0;
-last = 0;
+trigger = 0;
 }
 
 # 68
 RC0 = 1;
 _delay((unsigned long)((10)*(500000/4000.0)));
 RC0 = 0;
-} else if (TMR0IF) {
+} else if (TMR0IF && TMR0IE) {
 RB4 = !RB4;
 TMR0IF = 0;
 if (buzzer_count == 20) {
@@ -4081,6 +4081,14 @@ buzzer_count = 0;
 buzzer_count++;
 TMR0 = 100;
 }
+} else if (INTF) {
+
+INTF = 0;
+TMR0IE = 0;
+RB4 = 1;
+RC1 = 0;
+buzzer_count = 0;
+trigger = 1;
 }
 }
 
@@ -4111,6 +4119,9 @@ PS2 = 0;
 GIE = 1;
 RCIE = 1;
 PEIE = 1;
+
+INTEDG = 0;
+INTE = 1;
 
 RC0 = 0;
 RC1 = 0;

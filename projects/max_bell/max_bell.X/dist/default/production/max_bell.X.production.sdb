@@ -104,7 +104,7 @@
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "48 /home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c
 [v _intr intr `II(v  1 e 0 0 ]
-"85
+"93
 [v _main main `(i  1 e 2 0 ]
 "732 /opt/microchip/xc8/v1.20/include/pic16f1829.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
@@ -144,6 +144,12 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "7195
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"7243
+[v _INTE INTE `VEb  1 e 0 @92 ]
+"7245
+[v _INTEDG INTEDG `VEb  1 e 0 @1198 ]
+"7247
+[v _INTF INTF `VEb  1 e 0 @89 ]
 "7469
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
 "7473
@@ -185,20 +191,20 @@
 "7861
 [v _WREN WREN `VEb  1 e 0 @3242 ]
 "45 /home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c
-[v _last last `i  1 e 2 0 ]
+[v _trigger trigger `i  1 e 2 0 ]
 "46
 [v _buzzer_count buzzer_count `i  1 e 2 0 ]
-"85
+"93
 [v _main main `(i  1 e 2 0 ]
 {
 [v main@argc argc `i  1 p 2 3 ]
 [v main@argv argv `*.1*.1uc  1 p 2 5 ]
-"119
+"130
 } 0
 "48
 [v _intr intr `II(v  1 e 0 0 ]
 {
 "52
 [v intr@data data `uc  1 a 1 2 ]
-"83
+"91
 } 0

@@ -8623,7 +8623,7 @@ Grid 5.08 mm&lt;p&gt;
 <part name="U$3" library="fritz" deviceset="MIC2940A" device=""/>
 <part name="HEARTBEAT" library="led" deviceset="LED" device="5MM"/>
 <part name="DOOR_OPEN" library="led" deviceset="LED" device="5MM"/>
-<part name="R2" library="rcl" deviceset="R-US_" device="0309/12" value="1K"/>
+<part name="R2" library="rcl" deviceset="R-US_" device="0309/12" value="10K"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="0309/12" value="1K"/>
 <part name="U$4" library="fritz" deviceset="BUZZER" device=""/>
 <part name="X1" library="con-wago-508" deviceset="W237-02P" device=""/>

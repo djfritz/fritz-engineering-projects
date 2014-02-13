@@ -42,7 +42,7 @@
 #define TICK 500
 #define BUZZER_COUNT_MAX 20
 
-int last = 0;
+int trigger = 0;
 int buzzer_count = 0;
 
 void interrupt intr(void) {
@@ -50,16 +50,16 @@ void interrupt intr(void) {
         RCIF = 0;
         // receive uart interrupt
         char data = RCREG;
-        if (data == 1 && last == 0) {
+        if (data == 1 && trigger == 0) {
             LED_DOOR = 1;
             BUZZER = 0;
             TMR0 = 100;
             TMR0IE = 1;
             TMR0IF = 0;
-            last = 1;
-        } else if (data == 2) {
+            trigger = 2;
+        } else if (data == 2 && trigger == 1) {
             LED_DOOR = 0;
-            last = 0;
+            trigger = 0;
         }
         /* normally i'd start a timer interrupt, but we know that the sending
          * side won't be sending another heartbeat for some time, so instead
@@ -68,7 +68,7 @@ void interrupt intr(void) {
         LED_HB = 1;
         __delay_ms(10);
         LED_HB = 0;
-    } else if (TMR0IF) {
+    } else if (TMR0IF && TMR0IE) {
         BUZZER = !BUZZER;
         TMR0IF = 0;
         if (buzzer_count == BUZZER_COUNT_MAX) {
@@ -79,6 +79,14 @@ void interrupt intr(void) {
             buzzer_count++;
             TMR0 = 100;
         }
+    } else if (INTF) {
+        // reset
+        INTF = 0;
+        TMR0IE = 0;
+        BUZZER = 1;
+        LED_DOOR = 0;
+        buzzer_count = 0;
+        trigger = 1;
     }
 }
 
@@ -109,6 +117,9 @@ int main(int argc, char** argv) {
     GIE = 1;
     RCIE = 1;
     PEIE = 1;
+
+    INTEDG = 0;
+    INTE = 1;
 
     LED_HB = 0;
     LED_DOOR = 0;

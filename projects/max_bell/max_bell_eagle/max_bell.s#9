@@ -8590,6 +8590,7 @@ Grid 5.08 mm&lt;p&gt;
 <part name="R3" library="rcl" deviceset="R-US_" device="0309/12" value="1K"/>
 <part name="U$4" library="fritz" deviceset="BUZZER" device=""/>
 <part name="X1" library="con-wago-508" deviceset="W237-02P" device=""/>
+<part name="R4" library="rcl" deviceset="R-US_" device="0309/12" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -8613,8 +8614,9 @@ Grid 5.08 mm&lt;p&gt;
 <instance part="R2" gate="G$1" x="116.84" y="63.5" rot="R180"/>
 <instance part="R3" gate="G$1" x="116.84" y="50.8" rot="R180"/>
 <instance part="U$4" gate="G$1" x="106.68" y="35.56"/>
-<instance part="X1" gate="-1" x="33.02" y="12.7"/>
-<instance part="X1" gate="-2" x="33.02" y="7.62"/>
+<instance part="X1" gate="-1" x="-22.86" y="25.4"/>
+<instance part="X1" gate="-2" x="-22.86" y="20.32"/>
+<instance part="R4" gate="G$1" x="-15.24" y="33.02" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8666,6 +8668,10 @@ Grid 5.08 mm&lt;p&gt;
 <wire x1="68.58" y1="50.8" x2="63.5" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="50.8" x2="73.66" y2="50.8" width="0.1524" layer="91"/>
 <label x="73.66" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="-15.24" y1="38.1" x2="-15.24" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8725,6 +8731,11 @@ Grid 5.08 mm&lt;p&gt;
 <wire x1="111.76" y1="33.02" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
 <label x="119.38" y="33.02" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="X1" gate="-2" pin="KL"/>
+<wire x1="-17.78" y1="20.32" x2="-12.7" y2="20.32" width="0.1524" layer="91"/>
+<label x="-12.7" y="20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RX" class="0">
 <segment>
@@ -8755,6 +8766,14 @@ Grid 5.08 mm&lt;p&gt;
 <pinref part="U$1" gate="G$1" pin="RB6"/>
 <wire x1="53.34" y1="88.9" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
 <label x="58.42" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-1" pin="KL"/>
+<wire x1="-17.78" y1="25.4" x2="-15.24" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="25.4" x2="-15.24" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="25.4" x2="-12.7" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<label x="-12.7" y="25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GPIO_0" class="0">
