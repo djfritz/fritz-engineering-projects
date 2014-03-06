@@ -4062,7 +4062,7 @@ TMR0IE = 1;
 TMR0IF = 0;
 trigger = 2;
 } else if (data == 2 && trigger == 1) {
-RC1 = 0;
+
 trigger = 0;
 }
 
@@ -4077,6 +4077,7 @@ if (buzzer_count == 20) {
 TMR0IE = 0;
 RB4 = 1;
 buzzer_count = 0;
+trigger = 1;
 } else {
 buzzer_count++;
 TMR0 = 100;

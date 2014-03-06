@@ -11,16 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtlHcDpB.obj
-end_init CODE 0 63 63 2 2
+$/tmp/cgtPwqedJ.obj
+end_init CODE 0 5F 5F 2 2
 reset_vec CODE 0 0 0 2 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production/max_bell.X.production.obj
-intentry CODE 0 4 4 5F 2
-maintext CODE 0 65 65 27 2
+intentry CODE 0 4 4 5B 2
+maintext CODE 0 61 61 27 2
 cstackCOMMON COMMON 1 70 70 7 1
 bssCOMMON COMMON 1 77 77 4 1
-cinit CODE 0 8C 8C 7 2
+cinit CODE 0 88 88 7 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -42,13 +42,13 @@ BANK8 00420-0046F 1
 BANK9 004A0-004EF 1
 BIGRAM 02000-023EF 1
 CODE 00002-00003 2
-CODE 00093-01FFF 2
+CODE 0008F-01FFF 2
 COMMON 0007B-0007D 1
 CONST 00002-00003 2
-CONST 00093-01FFF 2
+CONST 0008F-01FFF 2
 EEDATA 0F000-0F0FF 2
 ENTRY 00002-00003 2
-ENTRY 00093-01FFF 2
+ENTRY 0008F-01FFF 2
 IDLOC 08000-08003 2
 RAM 00020-0006F 1
 RAM 000A0-000EF 1
@@ -96,9 +96,9 @@ SFR7 00380-0039F 1
 SFR8 00400-0041F 1
 SFR9 00480-0049F 1
 STRCODE 00002-00003 2
-STRCODE 00093-01FFF 2
+STRCODE 0008F-01FFF 2
 STRING 00002-00003 2
-STRING 00093-01FFF 2
+STRING 0008F-01FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -125,65 +125,62 @@ $dist/default/production/max_bell.X.production.obj
 "/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":58 1E intentry CODE
 "/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":59 1F intentry CODE
 "/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":60 23 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":61 2D intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":62 2F intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":68 31 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":69 33 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":70 3A intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":71 3C intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":72 40 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":73 42 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":74 43 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":75 48 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":76 49 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":77 4A intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":78 4C intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":79 4D intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":80 51 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":82 53 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":84 56 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":85 57 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":86 58 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":87 59 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":88 5A intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":89 5C intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":91 60 intentry CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":94 65 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":95 67 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":96 68 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":97 69 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":98 6C maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":99 6E maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":101 70 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":102 72 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":103 73 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":104 75 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":105 76 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":106 77 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":107 78 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":108 79 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":109 7A maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":111 7C maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":112 7E maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":113 7F maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":114 80 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":115 81 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":117 82 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":118 83 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":119 84 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":121 85 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":122 86 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":124 87 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":125 89 maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":126 8A maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":128 8B maintext CODE
-"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":130 8C maintext CODE
-"/tmp/cgtXZ97HU":496 8C cinit CODE
-"/tmp/cgtXZ97HU":497 8D cinit CODE
-"/tmp/cgtXZ97HU":498 8E cinit CODE
-"/tmp/cgtXZ97HU":499 8F cinit CODE
-"/tmp/cgtXZ97HU":506 90 cinit CODE
-"/tmp/cgtXZ97HU":507 91 cinit CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":62 2D intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":68 2F intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":69 31 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":70 38 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":71 3A intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":72 3E intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":73 40 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":74 41 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":75 46 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":76 47 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":80 49 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":81 4D intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":83 4F intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":85 52 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":86 53 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":87 54 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":88 55 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":89 56 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":90 58 intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":92 5C intentry CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":95 61 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":96 63 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":97 64 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":98 65 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":99 68 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":100 6A maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":102 6C maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":103 6E maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":104 6F maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":105 71 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":106 72 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":107 73 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":108 74 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":109 75 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":110 76 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":112 78 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":113 7A maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":114 7B maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":115 7C maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":116 7D maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":118 7E maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":119 7F maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":120 80 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":122 81 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":123 82 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":125 83 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":126 85 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":127 86 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":129 87 maintext CODE
+"/home/fritz/repos/engineering/projects/max_bell/max_bell.X/max_bell.c":131 88 maintext CODE
+"/tmp/cgtL8r4dj":496 88 cinit CODE
+"/tmp/cgtL8r4dj":497 89 cinit CODE
+"/tmp/cgtL8r4dj":498 8A cinit CODE
+"/tmp/cgtL8r4dj":499 8B cinit CODE
+"/tmp/cgtL8r4dj":506 8C cinit CODE
+"/tmp/cgtL8r4dj":507 8D cinit CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -208,7 +205,7 @@ __S1 7B 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _GIE 5F 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _PSA 4AB 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-__Hintentry C6 0 CODE 0 intentry -
+__Hintentry BE 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __pintentry 8 0 CODE 0 intentry dist/default/production/max_bell.X.production.obj
 _TMR0 15 0 ABS 0 - dist/default/production/max_bell.X.production.obj
@@ -221,17 +218,17 @@ _INTE 5C 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _INTF 59 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _CREN CEC 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _SPEN CEF 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-_main CA 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
+_main C2 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _intr 8 0 CODE 0 intentry dist/default/production/max_bell.X.production.obj
-start C6 0 CODE 0 init /tmp/cgtlHcDpB.obj
+start BE 0 CODE 0 init /tmp/cgtPwqedJ.obj
 _BRG16 CFB 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 intr@data 72 0 COMMON 1 cstackCOMMON dist/default/production/max_bell.X.production.obj
 _RCREG 199 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _TRISB 8D 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 _TRISC 8E 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/cgtlHcDpB.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/cgtPwqedJ.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 __Hconfig 10012 0 CONFIG 0 config -
 __Lconfig 1000E 0 CONFIG 0 config -
@@ -280,12 +277,12 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-__Hinit C6 0 CODE 0 init -
-__Linit C6 0 CODE 0 init -
-__end_of_main 118 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
+__Hinit BE 0 CODE 0 init -
+__Linit BE 0 CODE 0 init -
+__end_of_main 110 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-end_of_initialization 120 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
+end_of_initialization 118 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Hsfr20 0 0 ABS 0 sfr20 -
@@ -310,7 +307,7 @@ __Hsfr14 0 0 ABS 0 sfr14 -
 __Lsfr14 0 0 ABS 0 sfr14 -
 __Hsfr24 0 0 ABS 0 sfr24 -
 __Lsfr24 0 0 ABS 0 sfr24 -
-__end_of_intr C6 0 CODE 0 intentry dist/default/production/max_bell.X.production.obj
+__end_of_intr BE 0 CODE 0 intentry dist/default/production/max_bell.X.production.obj
 __Hsfr15 0 0 ABS 0 sfr15 -
 __Lsfr15 0 0 ABS 0 sfr15 -
 __Hsfr25 0 0 ABS 0 sfr25 -
@@ -343,7 +340,7 @@ __Hbank2 0 0 ABS 0 bank2 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Lbank3 0 0 ABS 0 bank3 -
-___latbits 2 0 ABS 0 - /tmp/cgtlHcDpB.obj
+___latbits 2 0 ABS 0 - /tmp/cgtPwqedJ.obj
 __Hbank4 0 0 ABS 0 bank4 -
 __Lbank4 0 0 ABS 0 bank4 -
 __Hbank5 0 0 ABS 0 bank5 -
@@ -360,7 +357,7 @@ __Hbank9 0 0 ABS 0 bank9 -
 __Lbank9 0 0 ABS 0 bank9 -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
-__end_of__initialization 120 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
+__end_of__initialization 118 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
 _buzzer_count 77 0 COMMON 1 bssCOMMON dist/default/production/max_bell.X.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
@@ -421,29 +418,29 @@ __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 __pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production/max_bell.X.production.obj
-__Hend_init CA 0 CODE 0 end_init -
-__Lend_init C6 0 CODE 0 end_init -
+__Hend_init C2 0 CODE 0 end_init -
+__Lend_init BE 0 CODE 0 end_init -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
+intlevel0 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-intlevel1 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
-intlevel2 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
-intlevel3 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
-intlevel4 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
-intlevel5 0 0 CODE 0 functab /tmp/cgtlHcDpB.obj
+intlevel1 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
+intlevel2 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
+intlevel3 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
+intlevel4 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
+intlevel5 0 0 CODE 0 functab /tmp/cgtPwqedJ.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/max_bell.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-start_initialization 118 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
+start_initialization 110 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-__pmaintext CA 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
+__pmaintext C2 0 CODE 0 maintext dist/default/production/max_bell.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
-__initialization 118 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
+__initialization 110 0 CODE 0 cinit dist/default/production/max_bell.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 # %DABS Section
@@ -464,6 +461,6 @@ __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/max_bell.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 2 2 CODE
-intentry 0 4 8 8F 2 CODE
+intentry 0 4 8 8B 2 CODE
 config 0 8007 1000E 2 2 CONFIG
 cstackCOMMON 1 70 70 B 1 COMMON

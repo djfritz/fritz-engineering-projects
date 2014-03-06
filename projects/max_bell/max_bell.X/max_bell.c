@@ -58,7 +58,7 @@ void interrupt intr(void) {
             TMR0IF = 0;
             trigger = 2;
         } else if (data == 2 && trigger == 1) {
-            LED_DOOR = 0;
+            //LED_DOOR = 0;
             trigger = 0;
         }
         /* normally i'd start a timer interrupt, but we know that the sending
@@ -75,6 +75,7 @@ void interrupt intr(void) {
             TMR0IE = 0;
             BUZZER = 1;
             buzzer_count = 0;
+            trigger = 1;
         } else {
             buzzer_count++;
             TMR0 = 100;
